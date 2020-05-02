@@ -28,8 +28,8 @@ for i in range(n):
 	mat     = np.hstack((y11,y13))
 	inv     = np.linalg.pinv(mat)
 	coef    = np.matmul(inv,y1)
-	ypred   = coef*mat
-	ypred1  = ypred[N-2,1]
+	ypred   = mat.dot(coef)
+	ypred1  = ypred[N-2]
 	y       = np.hstack((y,np.round(ypred1)))
 	
 y_ar_pred   = y 
